@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NutriTracker Dashboard</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="sidebar">
+        <div class="brand">
+          <div class="logo">N</div>
+          <div>
+            <p class="brand-name">NutriTracker</p>
+            <p class="brand-subtitle">Health dashboard</p>
+          </div>
+        </div>
+        <nav class="sidebar-nav">
+          <a class="nav-link active" href="#">Dashboard</a>
+          <a class="nav-link" href="#food-log">Food Log</a>
+          <a class="nav-link" href="#progress">Progress</a>
+          <a class="nav-link" href="#profile">Profile</a>
+        </nav>
+      </aside>
+
+      <div class="main-content">
+        <header class="topbar">
+          <div class="topbar-left">
+            <h1>Dashboard</h1>
+            <p>Track your nutrition and stay energized every day.</p>
+          </div>
+          <div class="topbar-actions">
+            <button class="btn btn-secondary">Daily Summary</button>
+            <div class="profile-chip">JD</div>
+          </div>
+        </header>
+
+        <section class="welcome-panel">
+          <div>
+            <p class="eyebrow">Good morning, Jessica</p>
+            <h2>Today's nutrition snapshot</h2>
+            <p>Keep your habits consistent with balanced meals and hydration.</p>
+          </div>
+          <div class="welcome-stats">
+            <div class="stat-pill"><span>Goal</span><strong>2200 kcal</strong></div>
+            <div class="stat-pill"><span>Active days</span><strong>12 this week</strong></div>
+          </div>
+        </section>
+
+        <section class="stats-grid">
+          <article class="stat-card card-glow">
+            <div class="card-title">Total Calories</div>
+            <div class="card-value">1,580 kcal</div>
+            <p class="card-note">60% of daily goal</p>
+          </article>
+          <article class="stat-card">
+            <div class="card-title">Protein Intake</div>
+            <div class="card-value">95 g</div>
+            <p class="card-note">34% of daily goal</p>
+          </article>
+          <article class="stat-card">
+            <div class="card-title">Carbs Intake</div>
+            <div class="card-value">185 g</div>
+            <p class="card-note">70% of daily goal</p>
+          </article>
+          <article class="stat-card">
+            <div class="card-title">Water Intake</div>
+            <div class="card-value">2.1 L</div>
+            <p class="card-note">75% of daily goal</p>
+          </article>
+        </section>
+
+        <div class="content-columns">
+          <section class="panel card" id="food-log">
+            <div class="panel-header">
+              <div>
+                <h3>Log a food item</h3>
+                <p>Quick add meals to keep your diary up to date.</p>
+              </div>
+              <span class="badge">New</span>
+            </div>
+
+            <form class="food-form" id="foodForm">
+              <div class="form-row">
+                <label for="foodName">Food name</label>
+                <input id="foodName" type="text" placeholder="e.g. Avocado toast" required />
+              </div>
+              <div class="form-row">
+                <label for="quantity">Quantity</label>
+                <input id="quantity" type="text" placeholder="e.g. 1 serving" required />
+              </div>
+              <div class="form-row">
+                <label for="mealType">Meal type</label>
+                <select id="mealType" required>
+                  <option>Breakfast</option>
+                  <option>Lunch</option>
+                  <option>Dinner</option>
+                  <option>Snacks</option>
+                </select>
+              </div>
+              <button type="submit" class="btn btn-primary">Add entry</button>
+            </form>
+
+            <div class="table-wrap">
+              <div class="table-header">
+                <h3>Today’s food log</h3>
+                <p>Monitor what you ate recently.</p>
+              </div>
+              <table>
+                <thead>
+                  <tr>
+                    <th>Food</th>
+                    <th>Quantity</th>
+                    <th>Meal</th>
+                    <th>Time</th>
+                  </tr>
+                </thead>
+                <tbody id="foodTableBody">
+                  <tr>
+                    <td>Greek yogurt</td>
+                    <td>1 cup</td>
+                    <td>Breakfast</td>
+                    <td>08:25 AM</td>
+                  </tr>
+                  <tr>
+                    <td>Grilled chicken salad</td>
+                    <td>1 bowl</td>
+                    <td>Lunch</td>
+                    <td>12:40 PM</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </section>
+
+          <aside class="panel card progress-panel" id="progress">
+            <div class="panel-header">
+              <div>
+                <h3>Daily goals progress</h3>
+                <p>Visualize your nutrition performance.</p>
+              </div>
+            </div>
+
+            <div class="progress-list">
+              <div class="progress-item">
+                <div>
+                  <p class="progress-title">Calories</p>
+                  <strong>1,580 / 2,200 kcal</strong>
+                </div>
+                <div class="progress-bar"><span style="width: 72%"></span></div>
+              </div>
+              <div class="progress-item">
+                <div>
+                  <p class="progress-title">Protein</p>
+                  <strong>95 / 120 g</strong>
+                </div>
+                <div class="progress-bar"><span style="width: 79%"></span></div>
+              </div>
+              <div class="progress-item">
+                <div>
+                  <p class="progress-title">Carbs</p>
+                  <strong>185 / 260 g</strong>
+                </div>
+                <div class="progress-bar"><span style="width: 71%"></span></div>
+              </div>
+              <div class="progress-item">
+                <div>
+                  <p class="progress-title">Water</p>
+                  <strong>2.1 / 2.8 L</strong>
+                </div>
+                <div class="progress-bar"><span style="width: 75%"></span></div>
+              </div>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
